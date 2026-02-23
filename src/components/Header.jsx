@@ -4,9 +4,8 @@ import React, { useState, useEffect } from "react";
 const Header = () => {
   const [theme, setTheme] = useState("light");
   const [openDropdown, setOpenDropdown] = useState(null);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false); // State for mobile toggle
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  // Load saved theme
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme");
     if (savedTheme) {
@@ -22,7 +21,6 @@ const Header = () => {
     localStorage.setItem("theme", newTheme);
   };
 
-  // Sticky navbar logic
   useEffect(() => {
     const onScroll = () => {
       const header = document.getElementById("site-header");
@@ -36,7 +34,6 @@ const Header = () => {
   }, []);
 
   const toggleDropdown = (menu) => {
-    // On mobile, we toggle; on desktop, hover handles it
     setOpenDropdown(openDropdown === menu ? null : menu);
   };
 
@@ -55,39 +52,28 @@ const Header = () => {
             </Link>
           </h1>
 
-          {/* MOBILE TOGGLE BUTTON (Hamburger) */}
           <button 
             className={`navbar-toggler ${isMobileMenuOpen ? "" : "collapsed"}`} 
             type="button" 
-            aria-label="Toggle navigation"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             <span className="navbar-toggler-icon fa icon-expand fa-bars"></span>
             <span className="navbar-toggler-icon fa icon-close fa-times"></span>
           </button>
 
-          {/* ADDED 'show' class conditionally for mobile visibility */}
-          <div className={`collapse navbar-collapse ${isMobileMenuOpen ? "show" : ""}`} id="navbarTogglerDemo02">
-            <ul className="navbar-nav mx-lg-auto">
+          <div className={`collapse navbar-collapse ${isMobileMenuOpen ? "show" : ""}`}>
+          <ul className="navbar-nav mx-lg-auto justify-content-center align-items-center">
               <li className="nav-item">
                 <Link className="nav-link" to="/" onClick={closeMobileMenu}>Home</Link>
               </li>
-
               <li className="nav-item">
                 <Link className="nav-link" to="/about" onClick={closeMobileMenu}>About</Link>
               </li>
 
-              {/* PRODUCTS DROPDOWN */}
-              <li
-                className={`nav-item dropdown ${openDropdown === "products" ? "show" : ""}`}
-                onMouseEnter={() => window.innerWidth > 991 && setOpenDropdown("products")}
-                onMouseLeave={() => window.innerWidth > 991 && setOpenDropdown(null)}
-              >
-                <span
-                  className="nav-link dropdown-toggle"
-                  onClick={() => toggleDropdown("products")}
-                  style={{ cursor: "pointer" }}
-                >
+              <li className={`nav-item dropdown ${openDropdown === "products" ? "show" : ""}`}
+                  onMouseEnter={() => window.innerWidth > 991 && setOpenDropdown("products")}
+                  onMouseLeave={() => window.innerWidth > 991 && setOpenDropdown(null)}>
+                <span className="nav-link dropdown-toggle" onClick={() => toggleDropdown("products")} style={{ cursor: "pointer" }}>
                   Products <span className="fa fa-angle-down"></span>
                 </span>
                 <ul className={`dropdown-menu ${openDropdown === "products" ? "show" : ""}`}>
@@ -97,17 +83,10 @@ const Header = () => {
                 </ul>
               </li>
 
-              {/* TRAINING DROPDOWN */}
-              <li
-                className={`nav-item dropdown ${openDropdown === "training" ? "show" : ""}`}
-                onMouseEnter={() => window.innerWidth > 991 && setOpenDropdown("training")}
-                onMouseLeave={() => window.innerWidth > 991 && setOpenDropdown(null)}
-              >
-                <span
-                  className="nav-link dropdown-toggle"
-                  onClick={() => toggleDropdown("training")}
-                  style={{ cursor: "pointer" }}
-                >
+              <li className={`nav-item dropdown ${openDropdown === "training" ? "show" : ""}`}
+                  onMouseEnter={() => window.innerWidth > 991 && setOpenDropdown("training")}
+                  onMouseLeave={() => window.innerWidth > 991 && setOpenDropdown(null)}>
+                <span className="nav-link dropdown-toggle" onClick={() => toggleDropdown("training")} style={{ cursor: "pointer" }}>
                   Training <span className="fa fa-angle-down"></span>
                 </span>
                 <ul className={`dropdown-menu ${openDropdown === "training" ? "show" : ""}`}>
@@ -117,17 +96,10 @@ const Header = () => {
                 </ul>
               </li>
 
-              {/* OUTREACH DROPDOWN */}
-              <li
-                className={`nav-item dropdown ${openDropdown === "outreach" ? "show" : ""}`}
-                onMouseEnter={() => window.innerWidth > 991 && setOpenDropdown("outreach")}
-                onMouseLeave={() => window.innerWidth > 991 && setOpenDropdown(null)}
-              >
-                <span
-                  className="nav-link dropdown-toggle"
-                  onClick={() => toggleDropdown("outreach")}
-                  style={{ cursor: "pointer" }}
-                >
+              <li className={`nav-item dropdown ${openDropdown === "outreach" ? "show" : ""}`}
+                  onMouseEnter={() => window.innerWidth > 991 && setOpenDropdown("outreach")}
+                  onMouseLeave={() => window.innerWidth > 991 && setOpenDropdown(null)}>
+                <span className="nav-link dropdown-toggle" onClick={() => toggleDropdown("outreach")} style={{ cursor: "pointer" }}>
                   Outreach <span className="fa fa-angle-down"></span>
                 </span>
                 <ul className={`dropdown-menu ${openDropdown === "outreach" ? "show" : ""}`}>
@@ -139,37 +111,29 @@ const Header = () => {
               <li className="nav-item">
                 <Link className="nav-link" to="/blog" onClick={closeMobileMenu}>Blog</Link>
               </li>
-
               <li className="nav-item">
                 <Link className="nav-link" to="/contact" onClick={closeMobileMenu}>Contact Us</Link>
               </li>
 
-              <li className="nav-item ms-lg-3 mt-lg-0 mt-3">
-                <Link className="btn btn-primary" to="/training/register" onClick={closeMobileMenu}>
+              {/* FIXED CTA BUTTON */}
+              <li className="nav-item ms-lg-3 mt-lg-0 mt-3 d-flex align-items-center">
+                <Link className="btn btn-primary text-nowrap" to="/training/register" onClick={closeMobileMenu}>
                   Book Training
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* THEME SWITCH */}
           <div className="mobile-position">
-            <nav className="navigation">
-              <div className="theme-switch-wrapper">
-                <label className="theme-switch" htmlFor="checkbox">
-                  <input
-                    type="checkbox"
-                    id="checkbox"
-                    onChange={handleThemeChange}
-                    checked={theme === "dark"}
-                  />
-                  <div className="mode-container">
-                    <i className="gg-sun"></i>
-                    <i className="gg-moon"></i>
-                  </div>
-                </label>
-              </div>
-            </nav>
+            <div className="theme-switch-wrapper">
+              <label className="theme-switch" htmlFor="checkbox">
+                <input type="checkbox" id="checkbox" onChange={handleThemeChange} checked={theme === "dark"} />
+                <div className="mode-container">
+                  <i className="gg-sun"></i>
+                  <i className="gg-moon"></i>
+                </div>
+              </label>
+            </div>
           </div>
         </nav>
       </div>

@@ -17401,7 +17401,49 @@ ul.twitter-feed a:hover {
 .footer-29-w3l p.twitter-title:hover {
   color: var(--primary-color);
 }
+/* --- Single-Line Button Fix --- */
+.btn-primary.text-nowrap {
+  white-space: nowrap !important; /* Forces text to stay on one line */
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 22px !important; /* Optimized padding */
+  font-size: 15px !important;
+  font-weight: 700;
+}
 
+/* --- Navigation Spacing Optimization --- */
+@media (min-width: 992px) {
+  /* Slightly tighten gaps to ensure everything fits on one row */
+  .navbar-expand-lg .navbar-nav .nav-link {
+      padding: 0 10px !important;
+      white-space: nowrap;
+      font-size: 15px;
+  }
+
+  /* Keeps the button from shrinking or being pushed down */
+  .nav-item.ms-lg-3 {
+      flex-shrink: 0;
+  }
+
+  /* Ensures the logo doesn't take up excessive room */
+  .navbar-brand {
+      margin-right: 0.5rem;
+  }
+}
+
+/* --- Theme Switcher Alignment --- */
+.mobile-position {
+  margin-left: 15px;
+  display: flex;
+  align-items: center;
+}
+
+/* --- Responsive Burger Fix --- */
+.navbar-toggler {
+  padding: 0.25rem 0.5rem;
+  font-size: 1rem;
+}
 @media screen and (max-width: 1190px) {
 
   .footer-29-w3l h3 {
