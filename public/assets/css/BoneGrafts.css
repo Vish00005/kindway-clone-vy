@@ -1,0 +1,180 @@
+/* Container and Wrapper */
+.bone-grafts-page {
+  background-color: var(--white);
+  color: var(--dark);
+  transition: background 0.3s ease;
+}
+
+[data-theme="dark"] .bone-grafts-page {
+  background-color: #121212;
+  color: var(--light);
+}
+
+/* HERO SECTION - DARK THEME FIX */
+.grafts-hero {
+  background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.7)), 
+              url('https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&q=80&w=1200');
+  background-size: cover;
+  background-position: center;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 120px 20px 60px; /* Space for Navbar */
+}
+
+.grafts-label {
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-weight: 800;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.grafts-hero-title {
+  color: #FFFFFF !important; /* Force white for visibility */
+  font-size: 4rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+}
+
+.grafts-hero-desc {
+  color: rgba(255,255,255,0.9) !important;
+  max-width: 800px;
+  margin: 0 auto 2.5rem;
+  font-size: 1.25rem;
+  line-height: 1.6;
+}
+
+/* CATALOG GRID */
+.catalog-section {
+  padding: 6rem 5%;
+}
+
+.catalog-title {
+  text-align: center;
+  font-size: 2.8rem;
+  color: var(--primary);
+  margin-bottom: 4rem;
+}
+
+.catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.graft-card {
+  background: var(--white);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.06);
+  border: 1px solid #eee;
+}
+
+[data-theme="dark"] .graft-card {
+  background: #1e1e1e;
+  border-color: #333;
+  color: white;
+}
+
+.graft-img-wrapper {
+  height: 250px;
+  position: relative;
+}
+
+.graft-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.graft-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: var(--primary);
+  color: white;
+  padding: 5px 15px;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.graft-details {
+  padding: 2rem;
+}
+
+/* CLINICAL SECTION */
+.clinical-excellence {
+  padding: 6rem 5%;
+  background: var(--light);
+}
+
+[data-theme="dark"] .clinical-excellence { background: #1a1a1b; }
+
+.clinical-flex {
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.clinical-image-container img {
+  width: 100%;
+  border-radius: 30px;
+  box-shadow: 20px 20px 0 var(--secondary);
+}
+
+.clinical-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 2rem;
+}
+
+.clinical-list li {
+  margin-bottom: 1rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+}
+
+.clinical-list li::before {
+  content: "✓";
+  color: var(--primary);
+  margin-right: 15px;
+  font-weight: 900;
+}
+
+/* BUTTONS */
+.btn-red {
+  background: var(--primary);
+  color: white;
+  padding: 15px 35px;
+  border: none;
+  border-radius: 50px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-right: 1rem;
+}
+
+.btn-white-outline {
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+  padding: 13px 35px;
+  border-radius: 50px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+@media (max-width: 992px) {
+  .clinical-flex { flex-direction: column; text-align: center; }
+  .grafts-hero-title { font-size: 2.5rem; }
+}

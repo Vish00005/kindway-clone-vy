@@ -1,0 +1,215 @@
+.implant-page-wrapper {
+  background-color: var(--white);
+  color: var(--dark);
+  transition: all 0.3s ease;
+}
+
+[data-theme="dark"] .implant-page-wrapper {
+  background-color: #121212;
+  color: var(--light);
+}
+
+/* HERO SECTION - FORCED CONTRAST FOR TRANSPARENT NAV */
+.implant-hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.7)), 
+              url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&q=80&w=1200');
+  background-size: cover;
+  background-position: center;
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  padding: 120px 5% 60px;
+}
+
+.implant-hero-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 4rem;
+}
+
+.implant-hero-content {
+  flex: 1;
+}
+
+.hero-eyebrow {
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: 800;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.implant-hero h1 {
+  color: #FFFFFF !important; /* Forced White */
+  font-size: 3.8rem;
+  line-height: 1.1;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+}
+
+.implant-hero p {
+  color: rgba(255, 255, 255, 0.9) !important; /* Forced White */
+  font-size: 1.25rem;
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+}
+
+.implant-hero-image {
+  flex: 0.8;
+}
+
+.implant-hero-image img {
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+  border: 4px solid rgba(255,255,255,0.1);
+}
+
+/* PRODUCT OVERVIEW */
+.implant-overview {
+  padding: 6rem 5%;
+}
+
+.overview-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 4rem;
+}
+
+.overview-header h2 {
+  font-size: 2.8rem;
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+.implant-product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.product-card {
+  background: var(--white);
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  border: 1px solid #eee;
+  text-align: center;
+}
+
+[data-theme="dark"] .product-card {
+  background: #1e1e1e;
+  border-color: #333;
+  color: white;
+}
+
+.product-img-wrapper {
+  margin-bottom: 1.5rem;
+  border-radius: 12px;
+  overflow: hidden;
+  height: 250px;
+}
+
+.product-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* FEATURES BAR */
+.implant-features-bar {
+  background: var(--primary);
+  padding: 2rem 0;
+  color: white;
+}
+
+.features-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.feature-pill {
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+/* CLINICAL SECTION */
+.implant-clinical {
+  padding: 6rem 5%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.clinical-flex {
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+}
+
+.clinical-image img {
+  width: 100%;
+  border-radius: 30px;
+  box-shadow: 20px 20px 0 var(--secondary);
+}
+
+.check-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 2rem;
+}
+
+.check-list li {
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.check-list li::before {
+  content: "✓";
+  color: var(--primary);
+  margin-right: 15px;
+  font-weight: 800;
+}
+
+/* CTA BANNER */
+.implant-cta-banner {
+  background: var(--gray-dark);
+  padding: 5rem 2rem;
+  text-align: center;
+  color: white;
+}
+
+.btn-primary-large {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 18px 45px;
+  border-radius: 50px;
+  font-weight: 800;
+  font-size: 1.1rem;
+  cursor: pointer;
+  margin-top: 2rem;
+  transition: transform 0.2s;
+}
+
+.btn-primary-large:hover { transform: scale(1.05); }
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 992px) {
+  .implant-hero-container, .clinical-flex {
+    flex-direction: column;
+    text-align: center;
+  }
+  .implant-hero h1 { font-size: 2.8rem; }
+  .implant-hero-image { order: 2; margin-top: 3rem; }
+}

@@ -1,0 +1,177 @@
+.register-main-wrapper {
+    background-color: var(--white);
+    color: var(--dark);
+  }
+  
+  [data-theme="dark"] .register-main-wrapper {
+    background-color: #121212;
+    color: var(--light);
+  }
+  
+  /* HERO SECTION - DARK THEME FIXED */
+  .register-hero {
+    background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.75)), 
+                url('https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80&w=1200');
+    background-size: cover;
+    background-position: center;
+    padding: 140px 20px 80px;
+    text-align: center;
+  }
+  
+  .register-eyebrow {
+    color: var(--primary);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-weight: 800;
+    display: block;
+    margin-bottom: 1rem;
+  }
+  
+  .register-title {
+    color: #FFFFFF !important;
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 4px 10px rgba(0,0,0,0.5);
+  }
+  
+  .register-subtitle {
+    color: rgba(255, 255, 255, 0.9) !important;
+    max-width: 850px;
+    margin: 0 auto;
+    font-size: 1.2rem;
+    line-height: 1.6;
+  }
+  
+  /* REGISTRATION SECTION */
+  .registration-section {
+    padding: 5rem 5%;
+    margin-top: -60px;
+  }
+  
+  .registration-container {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .registration-form-card {
+    background: var(--white);
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+    border: 1px solid #eee;
+  }
+  
+  [data-theme="dark"] .registration-form-card {
+    background: #1e1e1e;
+    border-color: #333;
+  }
+  
+  .registration-form-card h2 {
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+  }
+  
+  /* FORM STYLING */
+  .enroll-form {
+    margin-top: 2rem;
+  }
+  
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+  
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+  
+  .enroll-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    font-size: 0.9rem;
+  }
+  
+  .enroll-form input, .enroll-form select, .enroll-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #f9f9f9;
+  }
+  
+  [data-theme="dark"] .enroll-form input, 
+  [data-theme="dark"] .enroll-form select, 
+  [data-theme="dark"] .enroll-form textarea {
+    background: #2d2d2d;
+    border-color: #444;
+    color: white;
+  }
+  
+  .btn-enroll {
+    background: var(--primary);
+    color: white;
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: opacity 0.3s;
+  }
+  
+  .btn-enroll:hover {
+    opacity: 0.9;
+  }
+  
+  /* INFO SECTION */
+  .registration-info {
+    padding-top: 2rem;
+  }
+  
+  .info-block {
+    margin-bottom: 2.5rem;
+  }
+  
+  .info-block h3 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+  }
+  
+  .impact-mini-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+  
+  .mini-stat {
+    background: var(--gray-dark);
+    color: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    text-align: center;
+  }
+  
+  .mini-stat h4 {
+    font-size: 1.8rem;
+    color: var(--primary);
+    margin: 0;
+  }
+  .mini-stat p{
+    color:white;
+  }
+  
+  @media (max-width: 992px) {
+    .registration-container {
+      grid-template-columns: 1fr;
+    }
+    .register-title { font-size: 2.5rem; }
+  }
